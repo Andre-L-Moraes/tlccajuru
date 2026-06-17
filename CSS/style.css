@@ -1,0 +1,359 @@
+/* ==========================================================================
+   PALETA DE CORES (PRINCIPAL TLC)
+   #CC0A0B - Vermelho Principal (Base)
+   #800405 - Vermelho Escuro (Sombra / Base Degradê)
+   #FF4D4F - Coral Vivo (Luz / Hover)
+   #0B0C0E - Fundo Escuro Original
+   #1E2024 - Cinza Grafite Intermediário (Cards)
+   #A6ACB5 - Cinza Platina (Textos Secundários)
+   #FFFFFF - Branco Puro
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0B0C0E;
+    color: #FFFFFF;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Menu Login */
+
+.header-bar {
+    background-color: #0B0C0E;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    position: relative;
+    z-index: 10; /* <--- ADICIONE ESTA LINHA */
+}
+
+/* Container do Logo (Faz o quadrado branco vazar para baixo) */
+.logo-container {
+    background-color: #ffffff;
+    width: 120px;
+    height: 120px; /* Altura maior para passar da barra azul */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1); /* Sombra leve igual à da imagem */
+    position: relative;
+    top: 25px; /* Empurra o logo para baixo, saindo da barra */
+    color: #002244;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.logo-container .main-logo-img {
+    max-width: 90%;  /* Garante uma pequena margem interna nas laterais */
+    max-height: 90%; /* Garante uma pequena margem interna no topo e base */
+    width: auto;     /* Mantém a proporção horizontal */
+    height: auto;    /* Mantém a proporção vertical */
+    object-fit: contain; /* Garante que a imagem inteira apareça sem cortes, redimensionada proporcionalmente */
+    display: block;   /* Remove espaçamentos de linha de base de texto */
+}
+
+/* Container que agrupa o formulário de login */
+.login-menu {
+    display: flex;
+    align-items: flex-start; /* Alinha os elementos pelo topo dos inputs */
+    gap: 25px;
+    color: #ffffff;
+    font-size: 14px;
+    padding-top: 5px; /* Ajuste fino para alinhar verticalmente na barra */
+}
+
+/* Grupos de campos (Usuário e Senha) */
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Inputs de texto e senha */
+.input-group input {
+    background-color: #CC0A0B; /* Azul médio dos campos */
+    border: 1px solid #800405;  /* Borda levemente destacada */
+    color: #ffffff;
+    padding: 6px 8px;
+    height: 30px;
+    width: 180px;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #E58E82;
+}
+
+/* Bloco da senha que inclui o link "Termos de Uso" abaixo */
+.password-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+/* Bloco de botões e ações da direita */
+.action-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Botão Entrar */
+.btn-entrar {
+    background-color: #CC0A0B; /* Azul claro do botão */
+    color: #ffffff;
+    border: none;
+    padding: 0 25px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    width: 100px;
+    transition: background-color 0.2s;
+}
+
+.btn-entrar:hover {
+    background-color: #E58E82;
+}
+
+/* Estilização dos links (Termos e Esqueci a senha) */
+.login-link {
+    color: #ffffff;
+    text-decoration: underline;
+    font-size: 11px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.login-link:hover {
+    color: #cccccc;
+}
+
+/* Fim Menu Login
+
+
+
+
+.btn-secondary {
+    background-color: transparent;
+    color: #FFFFFF;
+    border: 2px solid #CC0A0B;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background-color: #CC0A0B;
+    box-shadow: 0 0 15px rgba(204, 10, 11, 0.4);
+}
+
+/* Hero Section com o Degradê Temático do Movimento */
+.hero-section {
+    padding: 180px 0 120px 0;
+    background: linear-gradient(135deg, #800405 0%, #CC0A0B 50%, #0B0C0E 100%);
+    text-align: center;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #F5F5F5;
+    max-width: 600px;
+    margin: 0 auto 35px auto;
+}
+
+/* Seções de Informação Gerais */
+.info-section {
+    padding: 80px 0;
+    background-color: #0B0C0E;
+}
+
+.alternate-bg {
+    background-color: #111317;
+}
+
+.section-title {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.section-title h2 {
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.title-bar {
+    width: 60px;
+    height: 4px;
+    background-color: #CC0A0B;
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+.content-block {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.content-block p {
+    font-size: 16px;
+    color: #A6ACB5;
+    margin-bottom: 20px;
+}
+
+.content-block strong {
+    color: #FFFFFF;
+}
+
+/* Grid de Recursos / Propósitos (Estilo Modular Apisul) */
+.feature-section {
+    padding: 80px 0;
+    background-color: #1E2024; /* Cinza intermediário destacando os cards */
+}
+
+.features-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 20px 0;
+    margin-top: 20px;
+}
+
+.feature-card {
+    display: table-cell;
+    background-color: #0B0C0E;
+    padding: 40px 30px;
+    border-radius: 6px;
+    text-align: center;
+    border-top: 4px solid #CC0A0B;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #FFFFFF;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: #A6ACB5;
+}
+
+/* Missão Grid Layout */
+.mission-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 30px 0;
+}
+
+.mission-item {
+    display: table-cell;
+    vertical-align: top;
+    background-color: #0B0C0E;
+    padding: 30px;
+    border-radius: 6px;
+    border-left: 3px solid #800405;
+}
+
+.mission-item h3 {
+    font-size: 18px;
+    color: #FF4D4F;
+    margin-bottom: 15px;
+}
+
+.mission-item p {
+    font-size: 15px;
+    color: #A6ACB5;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #000000;
+    padding: 40px 0;
+    border-top: 1px solid #1E2024;
+    text-align: center;
+}
+
+.footer-content p {
+    font-size: 13px;
+    color: #A6ACB5;
+    margin-bottom: 10px;
+}
+
+.footer-content .slogan {
+    font-size: 14px;
+    font-weight: 700;
+    color: #CC0A0B;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Botão de Scroll ao Topo */
+.btn-scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #CC0A0B;
+    color: #FFFFFF;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    display: none; /* Controlado pelo JS */
+    z-index: 999;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn-scroll-top:hover {
+    background-color: #FF4D4F;
+    transform: translateY(-3px);
+}
