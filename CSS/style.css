@@ -39,44 +39,44 @@ body {
     align-items: center;
     padding: 0 30px;
     position: relative;
-    z-index: 10; /* <--- ADICIONE ESTA LINHA */
+    z-index: 10;
 }
 
 /* Container do Logo (Faz o quadrado branco vazar para baixo) */
 .logo-container {
     background-color: #ffffff;
     width: 120px;
-    height: 120px; /* Altura maior para passar da barra azul */
+    height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 10px;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.1); /* Sombra leve igual à da imagem */
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
     position: relative;
-    top: 25px; /* Empurra o logo para baixo, saindo da barra */
+    top: 25px;
     color: #002244;
     font-size: 12px;
     font-weight: bold;
 }
 
 .logo-container .main-logo-img {
-    max-width: 90%;  /* Garante uma pequena margem interna nas laterais */
-    max-height: 90%; /* Garante uma pequena margem interna no topo e base */
-    width: auto;     /* Mantém a proporção horizontal */
-    height: auto;    /* Mantém a proporção vertical */
-    object-fit: contain; /* Garante que a imagem inteira apareça sem cortes, redimensionada proporcionalmente */
-    display: block;   /* Remove espaçamentos de linha de base de texto */
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
 }
 
 /* Container que agrupa o formulário de login */
 .login-menu {
     display: flex;
-    align-items: flex-start; /* Alinha os elementos pelo topo dos inputs */
+    align-items: flex-start;
     gap: 25px;
     color: #ffffff;
     font-size: 14px;
-    padding-top: 5px; /* Ajuste fino para alinhar verticalmente na barra */
+    padding-top: 5px;
 }
 
 /* Grupos de campos (Usuário e Senha) */
@@ -88,8 +88,8 @@ body {
 
 /* Inputs de texto e senha */
 .input-group input {
-    background-color: #CC0A0B; /* Azul médio dos campos */
-    border: 1px solid #800405;  /* Borda levemente destacada */
+    background-color: #CC0A0B;
+    border: 1px solid #800405;
     color: #ffffff;
     padding: 6px 8px;
     height: 30px;
@@ -119,7 +119,7 @@ body {
 
 /* Botão Entrar */
 .btn-entrar {
-    background-color: #CC0A0B; /* Azul claro do botão */
+    background-color: #CC0A0B;
     color: #ffffff;
     border: none;
     padding: 0 25px;
@@ -148,10 +148,7 @@ body {
     color: #cccccc;
 }
 
-/* Fim Menu Login
-
-
-
+/* Fim Menu Login */
 
 .btn-secondary {
     background-color: transparent;
@@ -170,7 +167,7 @@ body {
     box-shadow: 0 0 15px rgba(204, 10, 11, 0.4);
 }
 
-/* Hero Section com o Degradê Temático do Movimento */
+/* Hero Section */
 .hero-section {
     padding: 180px 0 120px 0;
     background: linear-gradient(135deg, #800405 0%, #CC0A0B 50%, #0B0C0E 100%);
@@ -238,10 +235,10 @@ body {
     color: #FFFFFF;
 }
 
-/* Grid de Recursos / Propósitos (Estilo Modular Apisul) */
+/* Grid de Recursos / Propósitos */
 .feature-section {
     padding: 80px 0;
-    background-color: #1E2024; /* Cinza intermediário destacando os cards */
+    background-color: #1E2024;
 }
 
 .features-grid {
@@ -347,7 +344,7 @@ body {
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
-    display: none; /* Controlado pelo JS */
+    display: none;
     z-index: 999;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -356,4 +353,86 @@ body {
 .btn-scroll-top:hover {
     background-color: #FF4D4F;
     transform: translateY(-3px);
+}
+
+
+/* ==========================================================================
+   REGRAS DE RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Dispositivos Médios e Tablets (Abaixo de 992px) */
+@media (max-width: 992px) {
+    .header-bar {
+        height: auto;
+        flex-direction: column;
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .logo-container {
+        top: 0; /* Remove o efeito de vazar para baixo em telas menores */
+        height: 90px;
+        width: 90px;
+    }
+
+    .login-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero-section {
+        padding: 120px 0 80px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+}
+
+/* Smartphones e Telas Pequenas (Abaixo de 768px) */
+@media (max-width: 768px) {
+    /* Desfaz o modo 'table' e empilha os cards verticalmente */
+    .features-grid, 
+    .mission-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .feature-card, 
+    .mission-item {
+        display: block;
+        width: 100%;
+    }
+
+    .login-menu {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .input-group {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .input-group input {
+        width: 200px; /* Um pouco maior no mobile para facilitar o toque */
+    }
+
+    .password-container, 
+    .action-group {
+        align-items: center;
+        width: 100%;
+    }
+
+    .info-section, 
+    .feature-section {
+        padding: 50px 0;
+    }
+
+    .section-title h2 {
+        font-size: 24px;
+    }
 }
